@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Proctoring Exam</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Crypto JS for Local Encryption -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- Chart.js for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- jsPDF for Certificates -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Dynamic Content Loaded Here -->
+        <nav id="navbar" class="hidden">
+            <div class="logo">AI Proctoring Exam</div>
+            <div class="nav-links">
+                <a href="#/dashboard" id="nav-dashboard">Dashboard</a>
+                <a href="#/create-quiz" id="nav-create-quiz" class="hidden">Create Quiz</a>
+                <a href="#" id="logout-btn">Logout</a>
+            </div>
+        </nav>
+        <main id="main-content">
+            <!-- Views will be injected here -->
+        </main>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <script src="js/idb-helper.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="js/service-worker-register.js"></script>
+    <script src="js/app-v2.js"></script>
+</body>
+
+</html>

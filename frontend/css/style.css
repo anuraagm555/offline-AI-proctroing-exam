@@ -1,0 +1,112 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-color: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --sidebar-width: 250px;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+/* Utilities */
+.hidden { display: none !important; }
+.container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn:hover { background-color: var(--primary-hover); }
+.btn-secondary { background-color: white; color: var(--text-color); border: 1px solid var(--border-color); }
+.btn-secondary:hover { background-color: #f9fafb; }
+.card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Forms */
+.form-group { margin-bottom: 1rem; }
+label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+nav {
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo { font-size: 1.25rem; font-weight: 700; color: var(--primary-color); }
+.nav-links a {
+    margin-left: 1.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+}
+.nav-links a:hover { color: var(--text-color); }
+
+/* Quiz Styles */
+.option-card {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.option-card:hover { background-color: #f0f9ff; border-color: var(--primary-color); }
+.option-card.selected {
+    background-color: #eff6ff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color) inset;
+}
+
+/* Toasts */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.toast {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    animation: slideIn 0.3s ease-out;
+}
+@keyframes slideIn {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

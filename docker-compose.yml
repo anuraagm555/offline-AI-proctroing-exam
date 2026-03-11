@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: ai-proctroing-exam_backend
+    restart: always
+    ports:
+      - "5001:5001"
+    environment:
+      - PORT=5001
+      - DB_TYPE=sqlite
+    volumes:
+      - ./backend/database.sqlite:/usr/src/app/database.sqlite
+    networks:
+      - ai-proctroing-exam-network
+
+  blockchain:
+    container_name: ai-proctroing-exam_blockchain
+    build: ./blockchain
+    restart: always
+    ports:
+      - "8545:8545"
+    networks:
+      - ai-proctroing-exam-network
+
+networks:
+  ai-proctroing-exam-network:
+    driver: bridge
